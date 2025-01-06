@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CallSage.ai</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/svg+xml" href="frame1.svg" id="favicon">
+    <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"><!-- 180×180 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const favicon = document.getElementById('favicon');
+            let index = 0;
+
+            // Array of frames for the animated favicon
+            const frames = [
+                'frame1.svg',
+                'frame2.svg',
+                'frame3.svg'
+            ];
+
+            setInterval(() => {
+                favicon.href = frames[index];
+                index = (index + 1) % frames.length;
+            }, 500); // Changed to 500ms for better visibility
+        });
+    </script>
+</head>
+
+<body>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="logo">
+                    <span class="call">Call</span><span class="sage">Sage</span><span class="dot">.</span><span
+                        class="ai">ai</span>
+                </div>
+                <h1>
+                    Converse
+                    <span class="connecting-dots">
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </span>
+                    Convert
+                </h1>
+                <p class="subtitle">We're crafting something revolutionary! Soon, you'll be able to transform your
+                    customer
+                    interactions with our AI-powered conversation tools. Join our waitlist to be among the first to
+                    know.</p>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Coming Soon</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🤖</div>
+                        <h3>AI-Powered Intelligence</h3>
+                        <p>Advanced algorithms that will understand and adapt to your customers' needs.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Boost Conversions</h3>
+                        <p>Get ready to turn conversations into conversions with smart engagement strategies.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Real-time Analytics</h3>
+                        <p>Soon you'll get instant insights into customer interactions and performance metrics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Join the Waitlist</h2>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" id="name-input" placeholder="Company Name" required>
+                    <input type="email" id="email-input" placeholder="Email" required>
+                    <input type="tel" id="phone-input" placeholder="Phone Number" required>
+                    <textarea id="description-input"
+                        placeholder="Tell us about your business and how you'd like to use CallSage.ai..."
+                        required></textarea>
+                    <div class="btn-wrapper">
+                        <button type="button" class="cta-button-large">Join Waitlist</button>
+                        <div id="notification"></div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CallSage.ai. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+</html>
