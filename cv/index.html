@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hypadrive.ai Business Letter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, -20px) rotate(180deg); }
+        }
+
+        .logo {
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo .tagline {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .date {
+            text-align: right;
+            font-size: 0.95rem;
+            color: #6b7280;
+            margin-bottom: 40px;
+        }
+
+        .recipient {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #6366f1;
+        }
+
+        .recipient h3 {
+            color: #1f2937;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .recipient p {
+            color: #6b7280;
+            margin: 4px 0;
+        }
+
+        .subject {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .letter-body {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .letter-body p {
+            margin-bottom: 20px;
+        }
+
+        .letter-body p:first-child {
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #6366f1 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .signature {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid #f3f4f6;
+        }
+
+        .signature-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .signature-left {
+            flex: 1;
+        }
+
+        .signature-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #1f2937;
+            margin-bottom: 5px;
+        }
+
+        .signature-title {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .contact-info a {
+            color: #6366f1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #4f46e5;
+        }
+
+        .footer {
+            background: #f8fafc;
+            padding: 30px 40px;
+            text-align: center;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+
+        .footer-item strong {
+            color: #1f2937;
+        }
+
+        .ai-badge {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .header {
+                padding: 30px 20px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .signature-content {
+                flex-direction: column;
+                align-items: start;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <div class="header">
+            <div class="logo">
+                <h1>Hypadrive.ai</h1>
+                <p class="tagline">Simplify, Automate and Optimise your B2B Outreach</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="date">
+                <strong>Date:</strong> July 6, 2025
+            </div>
+
+            <div class="recipient">
+                <h3>Dear Reader,</h3>
+            </div>
+
+            <div class="subject">
+                <strong>Subject:</strong> Reference Letter for Saeed
+            </div>
+
+            <div class="letter-body">
+                <p>I am writing to wholeheartedly recommend <span class="highlight">Saeed</span>, who worked with us at Hypadrive.ai for nearly three years. Throughout this time, Saeed consistently demonstrated exceptional commitment, professionalism, and technical acumen that played a crucial role in our team.</p>
+
+                <p>Saeed's attention to detail was second to none. Whether we were deep in product development, reviewing code, or planning technical milestones, he approached every task with precision and care. His ability to anticipate issues before they became problems saved us countless hours and contributed significantly to the stability and reliability of our platform.</p>
+
+                <p>His dedication to the project went well beyond the ordinary. Saeed could always be counted on - not only to deliver high-quality work on time but also to exceed expectations time and time again. He was punctual, dependable, and displayed an exceptional work ethic that lifted the standards of the entire team.</p>
+
+                <p>One of Saeed's most valuable contributions was his <span class="highlight">deep technical expertise</span>. From system architecture to implementation, he brought solutions that directly impacted our ability to bring the Hypadrive.ai platform to market and secure paying customers. His input was not just valuable - it was essential.</p>
+
+                <p>If it weren't for our project struggling to gain market traction over an extended period and, as a result, running out of runway, there is no way I would have let Saeed leave our team. I would have done everything possible to keep him on board.</p>
+
+                <p>Unfortunately, this is a situation that's all too common among startups. It is a sad reality that we've had to pause our collaboration with Saeed and other valued team members.</p>
+
+                <p><span class="highlight">Whoever is fortunate enough to have Saeed join their team is gaining an exceptional asset.</span> Saeed is the kind of team member every founder hopes to work with: diligent, skilled, self-driven, and absolutely reliable. I have no doubt he will bring the same level of excellence and integrity to any future endeavor.</p>
+
+                <p>Please feel free to contact me if you'd like to discuss his contributions further.</p>
+            </div>
+
+            <div class="signature">
+                <div class="signature-content">
+                    <div class="signature-left">
+                        <div class="signature-name">Michael Campbell</div>
+                        <div class="signature-title">CEO & Founder of Hypadrive.ai</div>
+                        <div class="contact-info">
+                            <strong>Email:</strong> <a href="mailto:michael@hypadrive.ai">michael@hypadrive.ai</a><br>
+                            <strong>Phone:</strong> +642109070990<br>
+                            <strong>Website:</strong> <a href="https://www.hypadrive.ai" target="_blank">www.hypadrive.ai</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="ai-badge">🚀 AI-Powered Outreach</div>
+            <div class="footer-content">
+                <div class="footer-item">
+                    <strong>Hypadrive.ai</strong> - The easiest, most guided and reliable tool for effective email outreach
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
